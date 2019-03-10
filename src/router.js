@@ -1,16 +1,23 @@
 const routers = [{
   path: '/',
-  name: 'index',
-  meta: {
-    title: 'index'
-  },
-  component: (resolve) => require(['./views/index.vue'], resolve)
+  redirect: '/fix'
 }, {
-  path: '/dfs',
-  name: 'dfs',
-  meta: {
-    title: 'DFS'
-  },
-  component: (resolve) => require(['./views/dfs.vue'], resolve)
+  path: '/fix',
+  name: 'fix',
+  component: (resolve) => require(['./components/fix/fix'], resolve),
+  children: [{
+    path: 'toOrder',
+    component: (resolve) => require(['./components/toOrder/toOrder'], resolve)
+  }]
+}, {
+  path: '/user',
+  component: (resolve) => require(['components/user/user'], resolve),
+  children: [{
+    path: 'order',
+    component: (resolve) => require(['components/order/order'], resolve)
+  }, {
+    path: 'coupon',
+    component: (resolve) => require(['components/coupon/coupon'], resolve)
+  }]
 }];
 export default routers;

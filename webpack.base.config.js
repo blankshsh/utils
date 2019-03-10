@@ -2,6 +2,10 @@ const path = require('path');
 // const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+function resolve(dir) {
+  return path.join(__dirname, '.', dir)
+}
+
 module.exports = {
   entry: {
     main: './src/main',
@@ -74,7 +78,24 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      'vue': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src/'),
+      'common': resolve('src/common'),
+      'components': resolve('src/components'),
+      'base': resolve('src/base'),
+      'api': resolve('src/api')
     }
-  }
+  },
+  node: {
+    // prevent webpack from injecting useless setImmediate polyfill because Vue
+    // source contains it (although only uses it if it's native).
+    setImmediate: false,
+    // prevent webpack from injecting mocks to Node native modules
+    // that does not make sense for the client
+    dgram: 'empty',
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    child_process: 'empty'
+  },
 };

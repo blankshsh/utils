@@ -19,7 +19,7 @@ const router = new VueRouter(RouterConfig);
 
 router.beforeEach((to, from, next) => {
   LoadingBar.start();
-  if (!to.params.legal && to.name !== 'index') return router.push({ name: 'index' })
+  if (!to.params.legal && to.name !== 'fix') return router.push({ name: 'fix' })
   Util.title(to.meta.title);
   next();
 });

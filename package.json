@@ -16,9 +16,15 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "amap": "^1.0.7",
     "axios": "^0.15.3",
+    "better-scroll": "^1.14.1",
+    "fs": "0.0.1-security",
     "iview": "^2.7.4",
+    "md5": "^2.2.1",
+    "sha1": "^1.1.1",
     "vue": "^2.5.2",
+    "vue-amap": "^0.5.8",
     "vue-router": "^3.0.1",
     "vuex": "^2.2.1"
   },
