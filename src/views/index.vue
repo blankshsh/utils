@@ -1,7 +1,7 @@
 <style scoped lang="less">
 .index {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -12,26 +12,31 @@
 </style>
 <template>
   <div class="index">
-    <button @click="jump('dfs')">dfs</button>
+    <div>
+      <Button type="primary"
+              @click="jump('pic')">pic</Button>
+      <Button type="primary"
+              @click="jump('drag')">drag</Button>
+    </div>
   </div>
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       src: '',
       alt: '',
       list: ['11', '222']
     };
   },
-  created() {
+  created () {
     window._this = this
   },
   methods: {
-    add() {
+    add () {
 
     },
-    jump(name) {
+    jump (name) {
       this.$router.push({ name: name, params: { legal: true } })
     }
   }

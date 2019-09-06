@@ -5,15 +5,15 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
 
     };
   },
-  mounted() {
+  mounted () {
 
   },
-  beforeDestroy() {
+  beforeDestroy () {
 
   },
   methods: {
@@ -22,10 +22,14 @@ export default {
 };
 </script>
 <style lang="less">
-*{
+* {
   padding: 0;
   margin: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style-type: none;
 }
 </style>
 

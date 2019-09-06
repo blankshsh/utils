@@ -6,11 +6,18 @@ const routers = [{
   },
   component: (resolve) => require(['./views/index.vue'], resolve)
 }, {
-  path: '/dfs',
-  name: 'dfs',
+  path: '/pic',
+  name: 'pic',
   meta: {
-    title: 'DFS'
+    title: 'pic'
   },
-  component: (resolve) => require(['./views/dfs.vue'], resolve)
+  component: (resolve) => require(['./views/pic.vue'], resolve)
+}, {
+  path: '/drag',
+  name: 'drag',
+  meta: {
+    title: 'drag'
+  },
+  component: (resolve) => require(['./views/drag.vue'], resolve)
 }];
 export default routers;
